@@ -1,7 +1,7 @@
 import React from "react";
 import { BiDesktop } from "react-icons/bi";
 import { RxCross1 } from "react-icons/rx";
-import { AiOutlinePlus, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ImTablet } from "react-icons/im";
 import { FaMobileAlt } from "react-icons/fa";
 

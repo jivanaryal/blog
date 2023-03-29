@@ -6,7 +6,6 @@ import {
   AiOutlineLine,
 } from "react-icons/ai";
 import { ImFacebook } from "react-icons/im";
-import { HiOutlineMenu } from "react-icons/hi";
 
 const icons = [
   {
