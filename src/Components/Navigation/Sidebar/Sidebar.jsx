@@ -33,13 +33,13 @@ const Sidebar = ({ show, setShow }) => {
   const location = useLocation();
   return (
     <div
-      className={`w-screen h-screen fixed top-16 left-0 right grid grid-cols-11 ${
+      className={`w-full h-full fixed top-16 left-0 right grid grid-cols-11 ${
         show ? "translate-x-0" : "translate-x-full"
-      }  duration-1000 delay-100 ease-in-out  z-10 `}>
+      }  duration-500 delay-100 ease-in-out  z-10 `}>
       <div
         className="col-span-9 relative z-10"
         onClick={() => setShow(!show)}></div>
-      <div className="col-span-2 flex flex-col gap-4 pl-6 pt-4 bg-white shadow-2xl transition-all  delay-1000 duration-300 z-5">
+      <div className="col-span-2 flex flex-col gap-4 pl-6 pt-4 bg-white shadow-2xl transition-all  delay-1000 duration-300 z-5 ">
         <div>
           <RxCross1
             className="absolute right-4 text-3xl"

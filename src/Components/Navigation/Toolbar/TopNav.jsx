@@ -22,7 +22,7 @@ const IconData = [
 
 const TopNav = () => {
   return (
-    <div className="container  flex justify-between pl-5 bg-[#333333] text-white items-center h-16 ">
+    <div className="container   flex justify-between pl-5 bg-[#333333] text-white items-center h-16  ">
       <div className="left flex gap-4 h-full">
         <div className="flex items-center">
           <div className="text-4xl font-normal">colorib</div>
