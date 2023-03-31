@@ -35,13 +35,11 @@ const MoreTrending = () => {
                   i >= 5 ? "hidden" : "block"
                 } border-2 w-fit  hover:scale-105 duration-700 delay-75 transition-all shadow-xl shadow-gray-300  `}>
                 <div>
-                  {val.image.map((image, i) => (
-                    <img
-                      src={image.path}
-                      alt="img"
-                      className="rounded-base shadow-lg border-[1px] h-56 w-full"
-                    />
-                  ))}
+                  <img
+                    src={val.image[0].path}
+                    alt="img"
+                    className="rounded-base shadow-lg border-[1px] h-56 w-full"
+                  />
                 </div>
                 <div>
                   <div className="px-4">

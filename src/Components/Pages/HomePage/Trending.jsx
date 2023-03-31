@@ -24,13 +24,13 @@ const Trending = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (index >= 1) {
+      if (index >= blog.length - 1) {
         setIndex(0);
       } else {
         setIndex(index + 1);
       }
     }, 5000);
-  }, [index]);
+  }, [index, blog]);
 
   return (
     <div>
