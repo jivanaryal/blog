@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingPage from "../../LoadingPage/LoadingPage";
+import { useNavigate } from "react-router-dom";
 
 const MoreTrending = () => {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   //   const [index, setIndex] = useState(0);
   const fetchData = async () => {
     try {
@@ -26,23 +28,24 @@ const MoreTrending = () => {
       {loading ? (
         <LoadingPage />
       ) : (
-        <div className="container  w-10/12 grid grid-cols-3 mx-auto gap-20 py-10  ">
+        <div className="  w-10/12 grid grid-cols-3 gap-12 mx-auto py-10  ">
           {blog.map((val, i) => {
             return (
               <div
                 key={i}
                 className={`${
                   i >= 5 ? "hidden" : "block"
-                } border-2 w-fit  hover:scale-105 duration-700 delay-75 transition-all shadow-xl shadow-gray-300  `}>
+                } border-2  cursor-pointer w-full  hover:scale-105 duration-700 delay-75 transition-all shadow-xl shadow-gray-300  `}
+                onClick={() => navigate(`/item/${val._id}`)}>
                 <div>
                   <img
                     src={val.image[0].path}
                     alt="img"
-                    className="rounded-base shadow-lg border-[1px] h-56 w-full"
+                    className="rounded-base shadow-lg border-[1px] h-56 w-full "
                   />
                 </div>
                 <div>
-                  <div className="px-4">
+                  <div className="px-4 py-3">
                     <p className="inline pr-2">{val.title}___</p>
                     <span>{val.createdAt}</span>
                     <h1 className="text-2xl font-bold capitalize pt-4 ">

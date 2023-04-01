@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingPage from "../../LoadingPage/LoadingPage";
+import { useNavigate } from "react-router-dom";
 
 const PopularPost = () => {
   const [blog, setBlog] = useState([]);
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -42,7 +44,8 @@ const PopularPost = () => {
                       : index + 1 === i
                       ? "translate-x-full "
                       : "-translate-x-full "
-                  } w-8/12 mx-auto  gap-10 pt-14 transition-all delay-100 duration-1000 absolute`}>
+                  } w-8/12 mx-auto  gap-10 cursor-pointer pt-14 transition-all delay-100 duration-1000 absolute`}
+                  onClick={() => navigate(`/item/${val._id}`)}>
                   <div className="mx-auto pl-56 w-full">
                     {i}
 

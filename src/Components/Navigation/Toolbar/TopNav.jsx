@@ -20,9 +20,12 @@ const IconData = [
   },
 ];
 
-const TopNav = () => {
+const TopNav = ({ scroll }) => {
   return (
-    <div className="container   flex justify-between pl-5 bg-[#333333] text-white items-center h-16  ">
+    <div
+      className={` w-screen ${
+        scroll ? "fixed top-0 left-0 z-50 bg-[#333333]" : ""
+      }   flex justify-between   text-white items-center  transition-all ease-in-out duration-700 delay-300 h-16  `}>
       <div className="left flex gap-4 h-full">
         <div className="flex items-center">
           <div className="text-4xl font-normal">colorib</div>

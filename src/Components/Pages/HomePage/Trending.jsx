@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import LoadingPage from "../../LoadingPage/LoadingPage";
+import { useNavigate } from "react-router-dom";
 
 const Trending = () => {
   const [blog, setBlog] = useState([]);
   const [index, setIndex] = useState(0);
   const [Loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -29,17 +31,17 @@ const Trending = () => {
       } else {
         setIndex(index + 1);
       }
-    }, 5000);
-  }, [index, blog]);
+    }, 3000);
+  }, [index, blog.length]);
 
   return (
     <div>
       {Loading ? (
         <LoadingPage />
       ) : (
-        <div className="w-full  ">
-          <h1 className="text-center text-5xl font-bold pt-8">Trending</h1>
-          <div className=" w-9/12 overflow-hidden mx-auto relative py-6 h-96">
+        <div className="w-full pb-10">
+          <h1 className="text-center text-5xl font-bold pt-8 pb-4">Trending</h1>
+          <div className=" w-9/12 overflow-hidden mx-auto relative py-10 h-96">
             {blog.map((val, i) => {
               return (
                 <div
@@ -48,7 +50,8 @@ const Trending = () => {
                     index === i
                       ? " translate-x-0 opacity-100 "
                       : "-translate-x-full opacity-0  "
-                  } w-full mx-auto grid grid-cols-12 absolute  gap-10 h-full  transition-all delay-100 duration-1000`}>
+                  } w-full mx-auto grid grid-cols-12 absolute  gap-10 h-full  transition-all delay-100 duration-1000 cursor-pointer `}
+                  onClick={() => navigate(`/item/${val._id}`, { state: val })}>
                   <div className="col-span-6">
                     {val.image.map((image, i) => (
                       <img

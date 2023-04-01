@@ -105,6 +105,7 @@ const Login = () => {
                               <Link to="/register">Create New</Link>
                             </div>
                           </div>
+                          <input type="text" />
                         </Form>
                       );
                     }}
