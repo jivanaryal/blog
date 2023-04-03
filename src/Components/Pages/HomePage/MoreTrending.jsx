@@ -10,7 +10,7 @@ const MoreTrending = () => {
   //   const [index, setIndex] = useState(0);
   const fetchData = async () => {
     try {
-      setLoading(true);
+      setLoading(false);
       const res = await axios.get("https://kalikablog.onrender.com/blog");
       setBlog(res.data.data);
       setLoading(false);
@@ -55,15 +55,9 @@ const MoreTrending = () => {
                       {val.description}
                     </p>
                   </div>
-                  <div className="flex gap-2 items-center pb-6">
+                  <div className="flex  items-center pb-6">
                     <div className="flex px-4">
-                      <p>
-                        <img
-                          src="https://scontent.fktm9-2.fna.fbcdn.net/v/t39.30808-6/315895995_1206787963516733_8522724124304818949_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_GnWt0_PcOMAX-bbjRo&_nc_ht=scontent.fktm9-2.fna&oh=00_AfA_JX1zQYQ1JakFbHF-4yFQYf40tcBHGYECrMsghvrpnA&oe=64283019"
-                          alt="profile"
-                          className="w-9 h-9 rounded-full"
-                        />
-                      </p>
+                      <p className="w-9 h-9 rounded-full border-2"></p>
                     </div>
                     <div className="">
                       <h1 className="text-bold capitalize text-xl">

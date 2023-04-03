@@ -18,25 +18,23 @@ const GetSingleItem = () => {
     getSingleItem();
   });
   return (
-    <div className="w-8/12 mx-auto flex items-center justify-center ">
+    <div className="w-8/12 mx-auto flex items-center justify-center">
       {singleBlog.map((val, i) => {
         console.log(val.image[0].path);
         console.log(val);
         return (
           <div key={i}>
             <div className="flex flex-col items-center w-full mt-10 gap-0">
-              <img
-                src="https://scontent.fktm9-2.fna.fbcdn.net/v/t39.30808-6/315895995_1206787963516733_8522724124304818949_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_GnWt0_PcOMAX-bbjRo&_nc_ht=scontent.fktm9-2.fna&oh=00_AfA_JX1zQYQ1JakFbHF-4yFQYf40tcBHGYECrMsghvrpnA&oe=64283019"
-                alt=""
-                className="w-16 h-16 rounded-full"
-              />
+              <p className="w-16 h-16 border-2 shadow-lg rounded-full"></p>
               <p className="">Jivan</p>
               <span className="">{val.createdAt}</span>
             </div>
 
-            <div className="font-bold text-3xl w-full px-32 py-10">
-              {val.description}
-            </div>
+            <div
+              className="font-bold text-3xl w-full px-32 py-10"
+              dangerouslySetInnerHTML={{ __html: val.description }}
+            />
+
             <img src={val.image[0].path} alt="img" />
             <div className="text-gray-500 leading-8 text-xl">
               Far far away, behind the word mountains, far from the countries

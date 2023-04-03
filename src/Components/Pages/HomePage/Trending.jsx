@@ -10,7 +10,7 @@ const Trending = () => {
   const navigate = useNavigate();
   const fetchData = async () => {
     try {
-      setLoading(true);
+      setLoading(false);
       const res = await axios.get("https://kalikablog.onrender.com/blog");
       setBlog(res.data.data);
       setLoading(false);
@@ -41,7 +41,7 @@ const Trending = () => {
       ) : (
         <div className="w-full pb-10">
           <h1 className="text-center text-5xl font-bold pt-8 pb-4">Trending</h1>
-          <div className=" w-9/12 overflow-hidden mx-auto relative py-10 h-96">
+          <div className=" w-9/12  overflow-hidden mx-auto relative py-10 h-96">
             {blog.map((val, i) => {
               return (
                 <div
@@ -50,7 +50,7 @@ const Trending = () => {
                     index === i
                       ? " translate-x-0 opacity-100 "
                       : "-translate-x-full opacity-0  "
-                  } w-full mx-auto grid grid-cols-12 absolute  gap-10 h-full  transition-all delay-100 duration-1000 cursor-pointer `}
+                  } w-full mx-auto grid grid-cols-12 absolute  gap-10 h-full  transition-all delay-300 duration-1000 cursor-pointer `}
                   onClick={() => navigate(`/item/${val._id}`, { state: val })}>
                   <div className="col-span-6">
                     {val.image.map((image, i) => (
@@ -68,19 +68,14 @@ const Trending = () => {
                       <h1 className="text-4xl font-bold capitalize">
                         {val.sub_title}
                       </h1>
-                      <p className="text-base text-gray-600 py-3 line-clamp-6">
-                        {val.description}
-                      </p>
+                      <p
+                        className="text-base text-gray-600 py-3 line-clamp-6"
+                        dangerouslySetInnerHTML={{ __html: val.description }}
+                      />
                     </div>
                     <div className="flex gap-2 items-center">
                       <div className="flex">
-                        <p>
-                          <img
-                            src="https://scontent.fktm9-2.fna.fbcdn.net/v/t39.30808-6/315895995_1206787963516733_8522724124304818949_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_GnWt0_PcOMAX-bbjRo&_nc_ht=scontent.fktm9-2.fna&oh=00_AfA_JX1zQYQ1JakFbHF-4yFQYf40tcBHGYECrMsghvrpnA&oe=64283019"
-                            alt="profile"
-                            className="w-12 h-12 rounded-full"
-                          />
-                        </p>
+                        <p className="w-12 h-12 rounded-full border-2"></p>
                       </div>
                       <div>
                         <h1 className="text-bold capitalize text-xl">

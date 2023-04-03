@@ -11,7 +11,7 @@ const PopularPost = () => {
 
   const fetchData = async () => {
     try {
-      setLoading(true);
+      setLoading(false);
       const res = await axios.get("https://kalikablog.onrender.com/blog");
       setBlog(res.data.data);
       setLoading(false);
@@ -30,17 +30,17 @@ const PopularPost = () => {
         <LoadingPage />
       ) : (
         <div className="w-full">
-          <h1 className="text-center text-5xl font-bold pt-8">
+          <h1 className="text-center text-5xl font-bold pt-10 ">
             Popular Courses
           </h1>
-          <div className=" relative w-full overflow-hidden h-96">
+          <div className=" relative  w-full overflow-hidden  h-[50rem]">
             {blog.map((val, i) => {
               return (
                 <div
                   key={i}
                   className={`${
                     index === i
-                      ? " translate-x-0   "
+                      ? " translate-x-0 "
                       : index + 1 === i
                       ? "translate-x-full "
                       : "-translate-x-full "
@@ -49,32 +49,25 @@ const PopularPost = () => {
                   <div className="mx-auto pl-56 w-full">
                     {i}
 
-                    {val.image.map((image, i) => (
-                      <img
-                        src={image.path}
-                        alt="img"
-                        className="rounded-xl  shadow-lg border-[1px] h-[30rem] w-full bg-[#ffffff]"
-                      />
-                    ))}
+                    <img
+                      src={val.image[0].path}
+                      alt="img"
+                      className="rounded-xl  shadow-lg border-[1px] h-[30rem] w-full bg-[#ffffff]"
+                    />
                   </div>
-                  <div className="col-span-5">
-                    <div>
-                      <p className="inline pr-2">{val.title}___</p>
+                  <div className="w-full pl-56">
+                    <div className="font-bold pt-2">
+                      <p className="inline  pr-2">{val.title}___</p>
                       <span>{val.createdAt}</span>
-                      <h1 className="text-2xl  font-bold  ">{val.sub_title}</h1>
-                      <p className="text-base text-gray-600 py-2">
-                        {val.description}
-                      </p>
+                      <h1 className="text-xl  font-bold  ">{val.sub_title}</h1>
+                      <p
+                        className="text-base text-gray-600 py-2 line-clamp-3 h-20"
+                        dangerouslySetInnerHTML={{ __html: val.description }}
+                      />
                     </div>
                     <div className="flex gap-2 items-center">
                       <div className="flex">
-                        <p>
-                          <img
-                            src="https://scontent.fktm9-2.fna.fbcdn.net/v/t39.30808-6/315895995_1206787963516733_8522724124304818949_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_GnWt0_PcOMAX-bbjRo&_nc_ht=scontent.fktm9-2.fna&oh=00_AfA_JX1zQYQ1JakFbHF-4yFQYf40tcBHGYECrMsghvrpnA&oe=64283019"
-                            alt="profile"
-                            className="w-12 h-12 rounded-full"
-                          />
-                        </p>
+                        <p className="w-12 h-12 rounded-full border-2"></p>
                       </div>
                       <div>
                         <h1 className="text-bold capitalize text-xl">
