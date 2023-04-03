@@ -10,7 +10,7 @@ const Trending = () => {
   const navigate = useNavigate();
   const fetchData = async () => {
     try {
-      setLoading(false);
+      setLoading(true);
       const res = await axios.get("https://kalikablog.onrender.com/blog");
       setBlog(res.data.data);
       setLoading(false);
