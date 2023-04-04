@@ -12,7 +12,7 @@ const Categorys = () => {
 
   const fetchData = async () => {
     try {
-      setLoading(true);
+      setLoading(false);
       const res = await axios.get("https://kalikablog.onrender.com/blog");
       setBlog(res.data.data);
       setLoading(false);

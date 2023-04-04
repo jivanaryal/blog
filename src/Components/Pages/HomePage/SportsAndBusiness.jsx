@@ -1,23 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const SportsAndBusiness = () => {
-  const [blog, setBlog] = useState([]);
+const SportsAndBusiness = ({ blog }) => {
   const navigate = useNavigate();
-
-  const fetchData = async () => {
-    try {
-      const res = await axios.get("https://kalikablog.onrender.com/blog");
-      setBlog(res.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <div className="grid grid-cols-2 mx-auto w-11/12 mb-32 mt-20">
       <div className="pl-12 w-full">

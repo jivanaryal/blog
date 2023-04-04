@@ -1,22 +1,61 @@
-import React from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import MoreTrending from "./MoreTrending";
 import PopularPost from "./PopularPost";
 import Trending from "./Trending";
 import SportsAndBusiness from "./SportsAndBusiness";
 import FooterTop from "../../Footer/FooterTop";
 import FooterDown from "../../Footer/FooterDown";
+import { get } from "../../../services/api";
+import LoadingPage from "../../LoadingPage/LoadingPage";
 
-const index = () => {
+const Index = () => {
+  const [blog, setBlog] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   get("/")
+  //     .then((res) => {
+  //       setBlog(res.data.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+  const newCallBack = useCallback(() => {
+    setLoading(true);
+    get("/")
+      .then((res) => {
+        setBlog(res.data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
+  }, []);
+
+  const newData = useMemo(() => newCallBack(), [newCallBack]);
+
   return (
-    <div className="bg-[#FFFFFF]">
-      <Trending />
-      <MoreTrending />
-      <PopularPost />
-      <SportsAndBusiness />
-      <FooterTop />
-      <FooterDown />
+    <div>
+      {loading ? (
+        <LoadingPage />
+      ) : (
+        <div className="bg-[#FFFFFF]">
+          <Trending blog={blog} />
+          <MoreTrending blog={blog} />
+          <PopularPost blog={blog} />
+          <SportsAndBusiness blog={blog} />
+          <FooterTop />
+          <FooterDown />
+        </div>
+      )}
     </div>
   );
 };
 
-export default index;
+export default Index;

@@ -33,7 +33,7 @@ const lines = [
 
 const DownNav = ({ show, setShow }) => {
   return (
-    <div className=" flex justify-around h-20 items-center border-2 shadow-sm ">
+    <div className=" flex justify-around h-20 items-center border-2 shadow-sm md">
       <div className="searchbar relative">
         <input
           type="search"
