@@ -58,7 +58,8 @@ const SportsAndBusiness = () => {
             return (
               <div
                 key={i}
-                className="flex gap-10 justify-around w-full mx-auto pb-8">
+                className="flex gap-10 justify-around w-full cursor-pointer mx-auto pb-8"
+                onClick={() => navigate(`/item/${val._id}`)}>
                 <img
                   src={val.image[0].path}
                   alt="img"
