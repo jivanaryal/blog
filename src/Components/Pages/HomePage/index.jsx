@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MoreTrending from "./MoreTrending";
 import PopularPost from "./PopularPost";
 import Trending from "./Trending";
@@ -12,20 +12,7 @@ const Index = () => {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   get("/")
-  //     .then((res) => {
-  //       setBlog(res.data.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  const newCallBack = useCallback(() => {
+  useEffect(() => {
     setLoading(true);
     get("/")
       .then((res) => {
@@ -38,7 +25,20 @@ const Index = () => {
       });
   }, []);
 
-  const newData = useMemo(() => newCallBack(), [newCallBack]);
+  // const newCallBack = useCallback(() => {
+  //   setLoading(true);
+  //   get("/")
+  //     .then((res) => {
+  //       setBlog(res.data.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+  // const newData = useMemo(() => newCallBack(), [newCallBack]);
 
   return (
     <div>

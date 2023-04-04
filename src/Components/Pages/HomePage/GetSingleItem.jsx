@@ -18,7 +18,7 @@ const GetSingleItem = () => {
 
   useEffect(() => {
     getSingleItem();
-  }, []);
+  });
   return (
     <div>
       <div className="w-8/12 mx-auto flex items-center justify-center">
