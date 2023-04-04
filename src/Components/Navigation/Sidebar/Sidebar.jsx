@@ -33,7 +33,7 @@ const Sidebar = ({ show, setShow }) => {
   const location = useLocation();
   return (
     <div
-      className={`w-full h-full fixed top-0 left-0 right grid grid-cols-11 ${
+      className={`w-full h-full fixed top-16 left-0 right grid grid-cols-11 ${
         show ? "translate-x-0" : "translate-x-full"
       }  duration-500 delay-100 ease-in-out  z-10 `}>
       <div
