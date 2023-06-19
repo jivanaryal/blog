@@ -13,7 +13,7 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
     get("/")
       .then((res) => {
         setBlog(res.data.data);
@@ -24,21 +24,6 @@ const Index = () => {
         setLoading(false);
       });
   }, []);
-
-  // const newCallBack = useCallback(() => {
-  //   setLoading(true);
-  //   get("/")
-  //     .then((res) => {
-  //       setBlog(res.data.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  // const newData = useMemo(() => newCallBack(), [newCallBack]);
 
   return (
     <div>

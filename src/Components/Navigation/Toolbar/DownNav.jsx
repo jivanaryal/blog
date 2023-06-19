@@ -33,16 +33,16 @@ const lines = [
 
 const DownNav = ({ show, setShow }) => {
   return (
-    <div className=" flex  justify-around h-20 items-center border-2 shadow-sm md">
+    <div className="  flex bg-red-500  justify-around w-full   h-20 items-center border-2 shadow-sm ">
       <div className="searchbar relative">
         <input
           type="search"
           placeholder="Search..."
-          className="rounded-full border-[1px] py-2 w-72 pl-10"
+          className="rounded-full border-[1px] py-2 hidden md:block md:w-72 pl-10"
         />
-        <AiOutlineSearch className="absolute top-3 text-gray-400 left-2 text-lg" />
+        <AiOutlineSearch className="absolute hidden md:block top-3 left-2" />
       </div>
-      <div className="font-bold text-xl">MAGDESGIN</div>
+      <div className="font-bold text-base md:text-xl">MAGDESGIN</div>
       <div className="flex gap-2">
         {icons.map((val, i) => (
           <div>{val.icons}</div>
@@ -50,7 +50,7 @@ const DownNav = ({ show, setShow }) => {
       </div>
       <div>
         {lines.map((val, i) => (
-          <div className=" my-[-25px]  text-4xl  ">
+          <div className=" my-[-25px]   text-4xl  ">
             <div key={i} onClick={() => setShow(!show)}>
               {val.icons}
             </div>

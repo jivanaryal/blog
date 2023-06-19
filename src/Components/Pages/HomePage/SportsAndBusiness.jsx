@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const SportsAndBusiness = ({ blog }) => {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-2 mx-auto w-11/12 mb-32 mt-20">
+    <div className="grid md:grid-cols-2 mx-auto w-11/12 mb-32 mt-20">
       <div className="pl-12 w-full">
         <h1 className="font-bold text-3xl pb-8 ">Sports</h1>
         <div>
@@ -13,7 +13,8 @@ const SportsAndBusiness = ({ blog }) => {
               <div
                 key={i}
                 className="flex gap-10 justify-around cursor-pointer w-full mx-auto pb-8 "
-                onClick={() => navigate(`/item/${val._id}`)}>
+                onClick={() => navigate(`/item/${val._id}`)}
+              >
                 <img
                   src={val.image[0].path}
                   alt="img"
@@ -44,7 +45,8 @@ const SportsAndBusiness = ({ blog }) => {
               <div
                 key={i}
                 className="flex gap-10 justify-around w-full cursor-pointer mx-auto pb-8"
-                onClick={() => navigate(`/item/${val._id}`)}>
+                onClick={() => navigate(`/item/${val._id}`)}
+              >
                 <img
                   src={val.image[0].path}
                   alt="img"

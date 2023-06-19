@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterTop = () => {
   return (
-    <div className="px-5  rounded-lg mx-4 mb-20 bg-[#F8F9FA] h-44   grid grid-cols-5 gap-10 items-center ">
+    <div className="px-5  rounded-lg mx-4 mb-20 bg-[#F8F9FA] h-44   md:grid grid-cols-5 gap-10 items-center ">
       <div className="col-span-3 ml-10">
         <h1 className="font-bold text-2xl pb-1">Subscribe to newsletter</h1>
         <input

@@ -5,8 +5,8 @@ const MoreTrending = ({ blog }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="  w-10/12 grid grid-cols-3 gap-12 mx-auto py-10  ">
+    <div className="pr-10">
+      <div className="w-9/12   md:w-10/12 grid md:grid-cols-3 gap-12 mx-auto py-10  ">
         {blog.map((val, i) => {
           return (
             <div
@@ -14,7 +14,8 @@ const MoreTrending = ({ blog }) => {
               className={`${
                 i >= 5 ? "hidden" : "block"
               } border-2  cursor-pointer w-full  hover:scale-105 duration-700 delay-75 transition-all shadow-xl shadow-gray-300  `}
-              onClick={() => navigate(`/item/${val._id}`)}>
+              onClick={() => navigate(`/item/${val._id}`)}
+            >
               <div>
                 <img
                   src={val.image[0].path}

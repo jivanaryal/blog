@@ -29,8 +29,9 @@ const Trending = ({ blog }) => {
                   index === i
                     ? " translate-x-0 opacity-100 "
                     : "-translate-x-full opacity-0  "
-                } w-full mx-auto grid grid-cols-12 absolute  gap-10 h-full  transition-all delay-300 duration-1000 cursor-pointer `}
-                onClick={() => navigate(`/item/${val._id}`, { state: val })}>
+                } w-full mx-auto grid md:grid-cols-12 absolute  gap-10 h-full  transition-all delay-300 duration-1000 cursor-pointer `}
+                onClick={() => navigate(`/item/${val._id}`, { state: val })}
+              >
                 <div className="col-span-6">
                   {val.image.map((image, i) => (
                     <img
@@ -76,7 +77,8 @@ const Trending = ({ blog }) => {
                 onClick={() => setIndex(i)}
                 className={`text-6xl   ${
                   index === i ? "text-yellow-600" : "text-gray-500"
-                }`}>
+                }`}
+              >
                 .
               </button>
             );
