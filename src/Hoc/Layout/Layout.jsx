@@ -28,8 +28,8 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="w-screen">
-      <div className="w-screen">
+    <div>
+      <div>
         <TopNav scroll={scroll} />
         <DownNav show={show} setShow={setShow} />
         <Sidebar show={show} setShow={setShow} />

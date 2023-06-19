@@ -23,7 +23,7 @@ const IconData = [
 const TopNav = ({ scroll }) => {
   return (
     <div
-      className={` w-full overflow-hidden bg-red-500 ${
+      className={` w-full overflow-hidden  ${
         scroll ? "fixed top-0  left-0 z-50 bg-[#333333]" : ""
       }   flex md:justify-between md sm   text-white items-center  transition-all ease-in-out duration-700 delay-300 h-16  `}
     >
@@ -37,7 +37,7 @@ const TopNav = ({ scroll }) => {
           <div className="text-xl  ">MAGDESIGN</div>
         </div>
       </div>
-      <div className="right flex  bg-yellow-500 h-full ">
+      <div className="right flex   h-full ">
         <div className="flex items-center ">
           <div className="md:grid md:grid-cols-4 h-full flex items-center ">
             {IconData.map((val, i) => {
