@@ -7,7 +7,7 @@ const PopularPost = ({ blog }) => {
 
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full md:block hidden">
         <h1 className="text-center text-5xl font-bold pt-10 ">
           Popular Courses
         </h1>
