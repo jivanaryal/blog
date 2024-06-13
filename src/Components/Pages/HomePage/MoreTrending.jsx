@@ -6,7 +6,7 @@ const MoreTrending = ({ blog }) => {
 
   return (
     <div className="pr-10">
-      <div className="w-9/12   md:w-10/12 grid md:grid-cols-3 gap-12 mx-auto py-10  ">
+      <div className="w-11/12   md:w-10/12 grid md:grid-cols-3 gap-12 mx-auto py-10  ">
         {blog.map((val, i) => {
           return (
             <div
