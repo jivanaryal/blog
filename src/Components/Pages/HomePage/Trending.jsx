@@ -20,7 +20,7 @@ const Trending = ({ blog }) => {
     <div>
       <div className="w-full pb-10">
         <h1 className="text-center text-5xl font-bold pt-8 pb-4">Trending</h1>
-        <div className=" w-9/12  overflow-hidden mx-auto relative py-10 h-96">
+        <div className=" w-11/12  overflow-hidden mx-auto relative py-10 h-96">
           {blog.map((val, i) => {
             return (
               <div
