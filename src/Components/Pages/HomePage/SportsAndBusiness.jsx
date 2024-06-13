@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const SportsAndBusiness = ({ blog }) => {
   const navigate = useNavigate();
   return (
-    <div className="grid md:grid-cols-2 mx-auto w-11/12 mb-32 mt-20">
+    <div className="grid md:grid-cols-2  mb-32 mt-20">
       <div className="pl-12 w-full">
         <h1 className="font-bold text-3xl pb-8 ">Sports</h1>
         <div>
