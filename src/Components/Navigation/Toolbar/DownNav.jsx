@@ -50,7 +50,7 @@ const DownNav = ({ show, setShow }) => {
       </div>
       <div>
         {lines.map((val, i) => (
-          <div className=" md:my-[-25px] my-[-45px]  text-4xl  ">
+          <div className=" my-[-25px]  text-4xl  ">
             <div key={i} onClick={() => setShow(!show)}>
               {val.icons}
             </div>
