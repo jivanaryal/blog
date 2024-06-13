@@ -37,9 +37,9 @@ const Sidebar = ({ show, setShow }) => {
         show ? "translate-x-0" : "translate-x-full"
       }  duration-500 delay-100 ease-in-out  z-10 `}>
       <div
-        className="col-span-9 relative z-10"
+        className="md:col-span-9 col-span-7 relative z-10"
         onClick={() => setShow(!show)}></div>
-      <div className="col-span-2 flex flex-col gap-4 pl-6 pt-4 bg-white shadow-2xl transition-all  delay-1000 duration-300 z-5    ">
+      <div className="md:col-span-2 col-span-4 flex flex-col gap-4 pl-6 pt-4 bg-white shadow-2xl transition-all  delay-1000 duration-300 z-5    ">
         <div>
           <RxCross1
             className="absolute right-4 text-3xl"
